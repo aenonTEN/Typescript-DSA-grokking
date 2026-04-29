@@ -1,47 +1,33 @@
-class BinarySearch {
+export function binarySearch(item: number, numList: number[]): number | null {
 
-numberList = new Array<number>[];
+let low: number = 0;
+let high: number =  numList.length - 1;
 
-numberList = [1,2,12,56,78,96,112,546,1100];
+let guess: number;
 
-numToSearch = 96;
+while(low<=high){
 
-function BinarySearch(numToSearch: number, numList: number[]){
-
-numList = this.numberList;
-numToSearch = this.numToSearch;
-low=0;
-high= numList.length - 1;
-
-while(low<=high) {
-mid = maths.floor((low + high)/ 2);
-
+let mid = Math.floor((low + high)/ 2);
 guess = numList[mid];
 
-if(guess===numToSearch) {
+if(guess==item){
 
 return mid;
 
-} if(guess<numToSearch) {
+} else if(guess<item){
+
+low = mid + 1;
+
+}else {
+
 high = mid - 1;
 
-
-} if(guess>numToSearch) {
-
-low =  mid + 1;
-
 }
-return none;
 
 
 }
+return null;
+
+
+
 }
-}
-
-binSearch = BinarySearch();
-console.log(binSearch);
-
-
-
-
-
